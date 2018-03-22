@@ -645,6 +645,8 @@ class DragAndDropBlock(
             else:
                 grade_feedback_template = FeedbackMessages.FINAL_ATTEMPT_TPL
 
+            grade_feedback_template = self.i18n_service.gettext(grade_feedback_template)
+
             feedback_msgs.append(
                 FeedbackMessage(grade_feedback_template.format(score=self.weighted_grade()), grade_feedback_class)
             )
